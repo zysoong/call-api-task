@@ -12,6 +12,8 @@ import java.util.List;
 @RequestMapping("/api/character")
 public class RickMortyController {
 
+
+
     private RickMortyService rmService;
 
     public RickMortyController(RickMortyService rmService){
