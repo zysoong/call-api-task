@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/character/random")
+@RequestMapping("/api/character")
 public class RickMortyController {
 
     private RickMortyService rmService;
@@ -18,9 +18,14 @@ public class RickMortyController {
         this.rmService = rmService;
     }
 
-    @GetMapping
+    @GetMapping("random")
     public RMCharacter getCharacter(){
         return this.rmService.getRandomCharacter();
+    }
+
+    @GetMapping
+    public List<RMCharacter> getAllCharacters(){
+        return this.rmService.getAllCharacters();
     }
 
 }

@@ -4,6 +4,6 @@ import java.util.List;
 
 public record OverviewCharacters (
         InfoCharacters info,
-        List<Object> result
+        List<RMCharacter> results
 ) {
 }
