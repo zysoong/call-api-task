@@ -2,6 +2,7 @@ package com.example.callapitask.service;
 
 import com.example.callapitask.model.OverviewCharacters;
 import com.example.callapitask.model.RMCharacter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -13,8 +14,14 @@ import java.util.Objects;
 @Service
 public class RickMortyService {
 
-    private final WebClient webClient = WebClient.create("https://rickandmortyapi.com/api/");
+    private final WebClient webClient;
 
+    public RickMortyService(
+            @Value("${rickandmorty.url}") String url
+    )
+    {
+        this.webClient = WebClient.create(url);
+    }
 
     public List<RMCharacter> getAllCharacters(){
 
