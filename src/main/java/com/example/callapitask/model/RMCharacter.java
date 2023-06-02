@@ -1,6 +1,6 @@
 package com.example.callapitask.model;
 
-public record Character(
+public record RMCharacter(
         String id,
         String name,
         String status,
