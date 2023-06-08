@@ -35,6 +35,8 @@ class RickMortyControllerIntegrationTest {
         mockWebServer.start();
     }
 
+
+    // Mock the application property "rickandmorty.url" with the url of mock web server
     @DynamicPropertySource
     static void backendProperties(DynamicPropertyRegistry registry){
         registry.add("rickandmorty.url", ()->mockWebServer.url("/").toString());
